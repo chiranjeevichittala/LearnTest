@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<!--  <h1>{% block title %}Log In{% endblock %}</h1>-->
+{% endblock %}
+
+{% block content %}
+<script src="../static/js/submit.js"></script>
+<div class="container" style="background-color:; padding:10px;">
+  <center>
+    <div class="card" style="width:60%;">
+      <div class="card-header">
+        Select an item to refresh from the dropdown.
+      </div>
+      <div class="card-body">
+        <h5 class="card-title"></h5>
+        <form action="{{url_for('refresh')}}" method="POST">
+          <div class="form-group">
+            <div class="row">
+                <div class="col-sm" style="padding-top:5px;"><label for="sel1">Select list:</label></div>
+                <div class="col-sm-8">
+                    <select class="form-control" id="sel1">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                    </select>
+                </div>
+                <div class="col-sm"><input type="submit" id="submit" value="Submit" class="btn btn-primary"></div>
+            </div>
+
+          </div>
+  <!--        <button type="submit" class="btn btn-primary">Refresh</button>-->
+        </form>
+      </div>
+    </div>
+  </center>
+</div>
+
+
+{% endblock %}

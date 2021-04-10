@@ -1,0 +1,28 @@
+<!doctype html>
+<title>{% block title %}{% endblock %} - Flaskr</title>
+<!--<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">-->
+<!--<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">-->
+<link rel="stylesheet" href="{{ url_for('static', filename='/bootstrap/bootstrap.min.css') }}">
+<!--<link rel="stylesheet" href="{{ url_for('static', filename='/bootstrap/bootstrap.css') }}">-->
+<script src="../static/jquery/jquery.min.js"></script>
+<!--<script src="../static/bootstrap/bootstrap.min.js"></script>-->
+<!--<script src="../static/bootstrap/bootstrap.bundle.js"></script>-->
+<script src="../static/bootstrap/bootstrap.bundle.min.js"></script>
+<style>
+  html,
+body {
+  height: 100%
+}
+</style>
+<nav>
+  {% include 'navbar.html' %}
+</nav>
+<section class="content">
+  <header>
+    {% block header %}{% endblock %}
+  </header>
+  {% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+  {% block content %}{% endblock %}
+</section>
